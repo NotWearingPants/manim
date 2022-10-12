@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import typing
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
 
@@ -10,11 +10,12 @@ from manim.utils.hashing import get_hash_from_play_call
 from .. import config, logger
 from ..camera.camera import Camera
 from ..mobject.mobject import Mobject
-from ..scene.scene import Scene
 from ..scene.scene_file_writer import SceneFileWriter
 from ..utils.exceptions import EndSceneEarlyException
 from ..utils.iterables import list_update
 
+if TYPE_CHECKING:
+    from ..scene.scene import Scene
 
 class CairoRenderer:
     """A renderer using Cairo.
