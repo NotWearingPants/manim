@@ -374,7 +374,7 @@ class SceneFileWriter:
         if write_to_movie() and allow_write:
             self.close_movie_pipe()
 
-    def write_frame(self, frame_or_renderer: np.array | "OpenGLRenderer"):
+    def write_frame(self, frame_or_renderer: np.array | OpenGLRenderer):
         """
         Used internally by Manim to write a frame to
         the FFMPEG input buffer.
@@ -393,7 +393,7 @@ class SceneFileWriter:
             if is_png_format() and not config["dry_run"]:
                 self.output_image_from_array(frame)
 
-    def write_opengl_frame(self, renderer: "OpenGLRenderer"):
+    def write_opengl_frame(self, renderer: OpenGLRenderer):
         if write_to_movie():
             self.writing_process.stdin.write(
                 renderer.get_raw_frame_buffer_object_data(),
