@@ -17,6 +17,7 @@ from ..utils.iterables import list_update
 if TYPE_CHECKING:
     from ..scene.scene import Scene
 
+
 class CairoRenderer:
     """A renderer using Cairo.
 
