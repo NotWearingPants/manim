@@ -10,7 +10,7 @@ import typing
 import zlib
 from time import perf_counter
 from types import FunctionType, MappingProxyType, MethodType, ModuleType
-from typing import Any, Iterable, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Iterable
 
 import numpy as np
 
@@ -320,7 +320,7 @@ def get_json(obj: dict):
 
 
 def get_hash_from_play_call(
-    scene_object: "Scene",
+    scene_object: Scene,
     camera_object: Camera,
     animations_list: Iterable[Animation],
     current_mobjects_list: Iterable[Mobject],
