@@ -2002,8 +2002,7 @@ class VDict(VMobject, metaclass=ConvertToOpenGL):
     def __init__(
         self,
         mapping_or_iterable: (
-            Mapping[Hashable, VMobject]
-            | Iterable[tuple[Hashable, VMobject]]
+            Mapping[Hashable, VMobject] | Iterable[tuple[Hashable, VMobject]]
         ) = {},
         show_keys: bool = False,
         **kwargs,
@@ -2019,8 +2018,7 @@ class VDict(VMobject, metaclass=ConvertToOpenGL):
     def add(
         self,
         mapping_or_iterable: (
-            Mapping[Hashable, VMobject]
-            | Iterable[tuple[Hashable, VMobject]]
+            Mapping[Hashable, VMobject] | Iterable[tuple[Hashable, VMobject]]
         ),
     ):
         """Adds the key-value pairs to the :class:`VDict` object.

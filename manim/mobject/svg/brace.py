@@ -19,9 +19,9 @@ from ...animation.composition import AnimationGroup
 from ...animation.fading import FadeIn
 from ...animation.growing import GrowFromCenter
 from ...constants import *
-from ..mobject import Mobject
 from ...mobject.types.vectorized_mobject import VMobject
 from ...utils.color import BLACK
+from ..mobject import Mobject
 from ..svg.svg_mobject import VMobjectFromSVGPath
 
 

@@ -235,7 +235,9 @@ class ImageMobject(AbstractImageMobject):
         super().fade(darkness, family)
         return self
 
-    def interpolate_color(self, mobject1: ImageMobject, mobject2: ImageMobject, alpha: float):
+    def interpolate_color(
+        self, mobject1: ImageMobject, mobject2: ImageMobject, alpha: float
+    ):
         """Interpolates an array of pixel color values into another array of
         equal size.
 

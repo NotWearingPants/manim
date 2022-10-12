@@ -48,9 +48,9 @@ from manim.mobject.opengl.opengl_compatibility import ConvertToOpenGL
 from manim.mobject.text.numbers import DecimalNumber, Integer
 from manim.mobject.text.tex_mobject import MathTex, Tex
 
-from .mobject import Mobject
 from ..constants import *
 from ..mobject.types.vectorized_mobject import VGroup, VMobject
+from .mobject import Mobject
 
 # TO DO : The following two functions are not used in this file.
 #         Not sure if we should keep it or not.
@@ -531,7 +531,9 @@ class IntegerMatrix(Matrix):
                 self.add(m0)
     """
 
-    def __init__(self, matrix: Iterable, element_to_mobject: Mobject = Integer, **kwargs):
+    def __init__(
+        self, matrix: Iterable, element_to_mobject: Mobject = Integer, **kwargs
+    ):
         """
         Will round if there are decimal entries in the matrix.
 
