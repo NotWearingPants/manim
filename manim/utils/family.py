@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 import itertools as it
+from typing import Iterable
 
 from ..mobject.mobject import Mobject
 from ..utils.iterables import remove_list_redundancies
 
 
 def extract_mobject_family_members(
-    mobjects: Mobject,
+    mobjects: Iterable[Mobject],
     use_z_index=False,
     only_those_with_points: bool = False,
 ):

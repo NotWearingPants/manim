@@ -10,7 +10,7 @@ import itertools as it
 import operator as op
 import pathlib
 from functools import reduce
-from typing import Any, Callable
+from typing import Any, Callable, Iterable
 
 import cairo
 import numpy as np
@@ -403,7 +403,7 @@ class Camera:
 
     def get_mobjects_to_display(
         self,
-        mobjects: Mobject,
+        mobjects: Iterable[Mobject],
         include_submobjects: bool = True,
         excluded_mobjects: list | None = None,
     ):
@@ -436,7 +436,7 @@ class Camera:
                     use_z_index=self.use_z_index,
                 )
                 mobjects = list_difference_update(mobjects, all_excluded)
-        return mobjects
+        return list(mobjects)
 
     def is_in_frame(self, mobject: Mobject):
         """Checks whether the passed mobject is in
@@ -481,7 +481,7 @@ class Camera:
         """
         return self.capture_mobjects([mobject], **kwargs)
 
-    def capture_mobjects(self, mobjects: Mobject, **kwargs):
+    def capture_mobjects(self, mobjects: Iterable[Mobject], **kwargs):
         """Capture mobjects by printing them on :attr:`pixel_array`.
 
         This is the essential function that converts the contents of a Scene

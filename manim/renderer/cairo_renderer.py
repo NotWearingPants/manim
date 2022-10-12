@@ -107,7 +107,7 @@ class CairoRenderer:
     def update_frame(  # TODO Description in Docstring
         self,
         scene,
-        mobjects: list | None = None,
+        mobjects: typing.Iterable[Mobject] | None = None,
         include_submobjects: bool = True,
         ignore_skipping: bool = True,
         **kwargs,
@@ -130,6 +130,8 @@ class CairoRenderer:
         """
         if self.skip_animations and not ignore_skipping:
             return
+
+        mobjects = list(mobjects)
         if not mobjects:
             mobjects = list_update(
                 scene.mobjects,
@@ -204,8 +206,8 @@ class CairoRenderer:
         scene: Scene,
         static_mobjects: typing.Iterable[Mobject],
     ) -> typing.Iterable[Mobject] | None:
-        """Compute and save the static frame, that will be reused at each frame to avoid to unecesseraly computer
-        static mobjects.
+        """Compute and save the static frame, that will be reused at each frame
+        to avoid unnecessarily computing static mobjects.
 
         Parameters
         ----------
@@ -217,7 +219,7 @@ class CairoRenderer:
         Returns
         -------
         typing.Iterable[Mobject]
-            the static image computed.
+            The static image computed.
         """
         self.static_image = None
         if not static_mobjects:

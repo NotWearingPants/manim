@@ -10,7 +10,7 @@ import typing
 import zlib
 from time import perf_counter
 from types import FunctionType, MappingProxyType, MethodType, ModuleType
-from typing import Any, Iterable
+from typing import Any, Iterable, TYPE_CHECKING
 
 import numpy as np
 
@@ -18,7 +18,9 @@ from .. import config, logger
 from ..animation.animation import Animation
 from ..camera.camera import Camera
 from ..mobject.mobject import Mobject
-from ..scene.scene import Scene
+
+if TYPE_CHECKING:
+    from ..scene.scene import Scene
 
 # Sometimes there are elements that are not suitable for hashing (too long or
 # run-dependent).  This is used to filter them out.
@@ -318,7 +320,7 @@ def get_json(obj: dict):
 
 
 def get_hash_from_play_call(
-    scene_object: Scene,
+    scene_object: "Scene",
     camera_object: Camera,
     animations_list: Iterable[Animation],
     current_mobjects_list: Iterable[Mobject],

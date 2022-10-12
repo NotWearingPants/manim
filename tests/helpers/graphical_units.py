@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 
 from manim import config, logger
+from manim.scene.scene import Scene
 
 
 def set_test_scene(scene_object: Scene, module_name: str):

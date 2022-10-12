@@ -14,7 +14,7 @@ __all__ = [
 import itertools as it
 import sys
 import typing
-from typing import Hashable, Iterable, Mapping, Optional, Sequence, Union
+from typing import Hashable, Iterable, Mapping, Optional, Sequence, Tuple, Union
 
 import colour
 import numpy as np
@@ -2002,7 +2002,7 @@ class VDict(VMobject, metaclass=ConvertToOpenGL):
     def __init__(
         self,
         mapping_or_iterable: (
-            Mapping[Hashable, VMobject] | Iterable[tuple[Hashable, VMobject]]
+            Union[Mapping[Hashable, VMobject], Iterable[Tuple[Hashable, VMobject]]]
         ) = {},
         show_keys: bool = False,
         **kwargs,
@@ -2018,7 +2018,7 @@ class VDict(VMobject, metaclass=ConvertToOpenGL):
     def add(
         self,
         mapping_or_iterable: (
-            Mapping[Hashable, VMobject] | Iterable[tuple[Hashable, VMobject]]
+            Union[Mapping[Hashable, VMobject], Iterable[Tuple[Hashable, VMobject]]]
         ),
     ):
         """Adds the key-value pairs to the :class:`VDict` object.
