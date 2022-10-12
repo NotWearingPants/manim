@@ -131,7 +131,6 @@ class CairoRenderer:
         if self.skip_animations and not ignore_skipping:
             return
 
-        mobjects = list(mobjects)
         if not mobjects:
             mobjects = list_update(
                 scene.mobjects,

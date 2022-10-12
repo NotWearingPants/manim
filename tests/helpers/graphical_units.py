@@ -12,7 +12,7 @@ from manim import config, logger
 from manim.scene.scene import Scene
 
 
-def set_test_scene(scene_object: Scene, module_name: str):
+def set_test_scene(scene_object: type[Scene], module_name: str):
     """Function used to set up the test data for a new feature. This will basically set up a pre-rendered frame for a scene. This is meant to be used only
     when setting up tests. Please refer to the wiki.
 
