@@ -238,8 +238,8 @@ class ImageMobject(AbstractImageMobject):
     def interpolate_color(
         self, mobject1: ImageMobject, mobject2: ImageMobject, alpha: float
     ):
-        """Interpolates an array of pixel color values into another array of
-        equal size.
+        """Interpolates the array of pixel color values from one ImageMobject
+        into an array of equal size in the target ImageMobject.
 
         Parameters
         ----------
